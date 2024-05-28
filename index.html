@@ -31,7 +31,8 @@
     .middle{
       display: grid;
       grid-template-columns: repeat(3, auto);
-      grid-template-rows: auto auto;
+      grid-template-rows: auto auto ;
+      margin-bottom: 30px;
     }
 
     .middle  figure > img{
@@ -67,9 +68,38 @@
       background-color: tomato;
     }
 
-    .three, .four{ 
-      margin-bottom: 50px;
-      width: 175px;
+    .two{
+      height: auto;
+      background-color: black;
+      color: antiquewhite;
+
+    }
+
+    .three h1,
+    .four p{
+      text-align: center;
+      width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .four p{
+      font-size: 15px;
+    }
+
+    .three h1{
+      font-size: 35px;
+    }
+
+    .four input{
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .readmore-btn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     h6{
@@ -144,7 +174,9 @@
           into the hands of the people. 
          But is it really fulfilling its promise?
         </p>
-      <input class="button" type="button" value="READ MORE">
+        <div class="readmore-btn">
+          <input class="button" type="button" value="READ MORE">
+        </div>
     </div>
  </section>
 
