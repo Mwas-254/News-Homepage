@@ -9,40 +9,48 @@
     *{
       box-sizing: border-box;
     }
-    
-    .first{
-      margin-top: 50px;
+
+    html,
+    body{
+      width: 100%;
     }
     
     nav{
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-right: 100px;
+    }
+
+    nav #open,
+    #close{
+      display: none;
     }
     nav ul{
       display: flex;
-      margin-right: 125px;
     }
     nav li{
       list-style-type: none;
       margin: 10px;
     }
+    header{
+      margin-left: 33px;
+    }
 
     .middle{
       display: grid;
-      grid-template-columns: repeat(3, auto);
-      grid-template-rows: auto auto ;
-      margin-bottom: 30px;
+      grid-template-columns: 1fr 1fr auto;
+      grid-template-rows: 0.5fr 0.5fr;
+      width: auto;
     }
 
     .middle  figure > img{
       width: 100%;
-      grid-column: 1 / span 2;
     }
 
     .middle figure{
-      height: auto;
       grid-column: 1 / span 2;
+     
     }
 
     p{
@@ -52,9 +60,6 @@
       margin-left: 11px;
       color: goldenrod;
     }
-    h4{
-      margin: 0;
-    }
     
     .button{
       background-color: black;
@@ -62,43 +67,37 @@
       border: 0;
       height: 40px;
       width: 130px;
+      margin-left: 16px;
     }
     .button:hover{
       background-color: tomato;
     }
 
     .two{
-      height: auto;
+      grid-column: 3;
+      grid-row: 1 / span 2;
       background-color: black;
       color: antiquewhite;
-
+      width: 300px;
+      margin-right: 55px;
+      margin-bottom: 33px;
+      
     }
-
-    .three h1,
-    .four p{
-      text-align: center;
-      width: 250px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .four p{
+    .two h2, p, h5{
       font-size: 15px;
+      margin-left: 15px;
     }
-
     .three h1{
+      text-align: center;
+      width: 165px;
+      margin-left: 30px;
       font-size: 35px;
+      margin-left: 30px;
     }
 
-    .four input{
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .readmore-btn{
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .four p{
+      width: 250px;
+      font-size: 15px;
     }
 
     h6{
@@ -112,12 +111,72 @@
       color: gray;
     }
 
+
     section.last{
       display: flex;
       justify-content: space-evenly;
+      margin-top: 20px;
+    }
+    article{
+      display: flex;
+      align-items: center;
+    }
+    span{
+      font-size: 25px;
+      margin-left: 20px;
+      opacity: 0.5;
+    }
+    article h6, .lastpara{
+      margin: auto;
+      margin-left: 20px;
+      margin-top: 10px;
+      width: 100px;
     }
 
+    article img{
+      width: 100px;
+      height: 140px;
+    }
+    
+
     @media (min-width: 320px) and (max-width: 425px) {
+      nav{
+        width: 100%;
+      }
+      
+      ul li {
+        display: none;
+      }
+     nav #open
+    {
+      display: flex;
+    }
+    .middlr{
+      display: grid;
+      grid-template-rows: repeat(4, auto);
+    }
+    .middle, .last{
+     display: flex;
+     flex-direction: column;
+    }
+
+    figure:first-child{
+      margin-left: auto;
+    }
+   .two{
+     margin-left: auto;
+    
+   }
+   .two{
+    grid-row-start: 4;
+    grid-row-end: 5;
+   }
+  
+
+
+
+    
+
       
     }
   
@@ -134,7 +193,18 @@
       </svg>
     </header>
     <ul>
-     
+      <svg id="open" width="40" height="17" xmlns="http://www.w3.org/2000/svg">
+        <g fill="#00001A" fill-rule="evenodd">
+          <path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z"/>
+        <path d="M0 0h40v3H0z"/>
+      </g>
+    </svg>
+
+    <svg id="close"  width="32" height="31" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#00001A" fill-rule="evenodd">
+        <path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z"/>
+        <path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z"/></g>
+    </svg>
        <li>New</li>
        <li>Popular</li>
        <li>Trending</li>
@@ -142,7 +212,7 @@
     </ul>
   </nav>
  
-  <main class="container">
+<main class="container">
  <section class="middle">
   
    <figure>
@@ -185,27 +255,33 @@
 <div class="conputer">
     <article>
       <img src="assets/images/image-retro-pcs.jpg" alt="">
-      <p>01</p>
+    <footer>
+      <span>01</span>
       <h6>Reviving Retro PCs</h6>
-      <p>What happens when old PCs are given modern upgrades?</p>
+      <p class="lastpara">What happens when old PCs are given modern upgrades?</p>
+    </footer>
     </article>
 </div>
 
 <div class="keyboard">
      <article>
       <img src="assets/images/image-top-laptops.jpg" alt="">
-       <p>02
+      <footer>
+        <span>02</span>
        <h6>Top 10 Laptops of 2022</h6>
-       <p>Our best picks for various needs and budgets.</p>
+       <p class="lastpara">Our best picks for various needs and budgets.</p>
+      </footer>
       </article>
 </div>
       
 <div class="console">
         <article>
         <img src="assets/images/image-gaming-growth.jpg" alt="">
-        <p>03</p>
+        <footer>
+         <span>03</span>
         <h6>The Growth of Gaming</h6>
-        <p>How the pandemic has sparked fresh opportunities.</p>
+        <p class="lastpara">How the pandemic has sparked fresh opportunities.</p>
+      </footer>
         </article>
   </div>
 
